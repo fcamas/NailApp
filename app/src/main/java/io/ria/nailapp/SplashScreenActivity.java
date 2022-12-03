@@ -7,18 +7,18 @@ import android.os.Bundle;
 import android.os.Handler;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splashscreen);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this , MainActivity.class));
+                startActivity(new Intent(SplashScreenActivity.this , MainActivity.class));
                 finish();
             }
         } , 4000);

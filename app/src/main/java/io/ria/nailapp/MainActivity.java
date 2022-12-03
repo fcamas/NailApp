@@ -11,26 +11,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import io.ria.nailapp.Adapter.ToDoAdapter;
-import io.ria.nailapp.Model.ToDoModel;
-import io.ria.nailapp.Utils.AddNewTask;
-import io.ria.nailapp.Utils.DataBaseHelper;
+import io.ria.nailapp.Adapter.NailAdapter;
+import io.ria.nailapp.Model.NailModel;
+import io.ria.nailapp.Utils.NailDBHelper;
 import io.ria.nailapp.Utils.OnDialogCloseListner;
-import io.ria.nailapp.Utils.RecyclerViewTouchHelper;
+import io.ria.nailapp.Utils.RecyclerViewHelper;
 
 public class MainActivity extends AppCompatActivity implements OnDialogCloseListner {
 
     private RecyclerView mRecyclerview;
-    private FloatingActionButton fab;
-    private DataBaseHelper myDB;
-    private List<ToDoModel> mList;
-    private ToDoAdapter adapter;
+    private NailDBHelper dbHelper;
+    private List<NailModel> mList;
+    private NailAdapter mAdapter;
     private Button nextActivity;
 
     @Override
@@ -38,44 +34,38 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mRecyclerview = findViewById(R.id.recyclerview);
-        fab = findViewById(R.id.fab);
-        myDB = new DataBaseHelper(MainActivity.this);
+        mRecyclerview = findViewById(R.id.recycle_view);
+        dbHelper = new NailDBHelper(MainActivity.this);
         mList = new ArrayList<>();
-        adapter = new ToDoAdapter(myDB , MainActivity.this);
-        nextActivity = findViewById(R.id.btn_next);
+        mAdapter = new NailAdapter(dbHelper, MainActivity.this);
 
         mRecyclerview.setHasFixedSize(true);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerview.setAdapter(adapter);
+        mRecyclerview.setAdapter(mAdapter);
+        nextActivity = findViewById(R.id.btn_create);
 
-        mList = myDB.getAllTasks();
+        mList = dbHelper.getAllTasks();
         Collections.reverse(mList);
-        adapter.setTasks(mList);
+        mAdapter.setTasks(mList);
+
 
         nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                Intent intent = new Intent(MainActivity.this, NailCreateActivity.class);
                 startActivity(intent);
             }
         });
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddNewTask.newInstance().show(getSupportFragmentManager() , AddNewTask.TAG);
-            }
-        });
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerViewTouchHelper(adapter));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerViewHelper(mAdapter));
         itemTouchHelper.attachToRecyclerView(mRecyclerview);
     }
 
     @Override
     public void onDialogClose(DialogInterface dialogInterface) {
-        mList = myDB.getAllTasks();
+        mList = dbHelper.getAllTasks();
         Collections.reverse(mList);
-        adapter.setTasks(mList);
-        adapter.notifyDataSetChanged();
+        mAdapter.setTasks(mList);
+        mAdapter.notifyDataSetChanged();
     }
 }

@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="5dp"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp">
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/cell_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="First Name Here"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/cell_email"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_below="@id/cell_fullname"
+            android:text="email@someemail.com"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/cell_phone"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_below="@id/cell_email"
+            android:text="999-999-9999"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <TextView
+            android:id="@+id/cell_time"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_below="@id/cell_phone"
+            android:text="12:pm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:id="@+id/cell_service"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_below="@id/cell_time"
+            android:text="- - - -"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
         <com.google.android.material.checkbox.MaterialCheckBox
-            android:id="@+id/mcheckbox"
+            android:id="@+id/cell_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/black"
-            android:text="options"
-            android:paddingStart="8dp" />
+            android:layout_below="@id/cell_service"
+            android:background="#F9B4F6"
+            android:buttonTint="@color/white"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="$99.99"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white" />
+
 
     </RelativeLayout>
 

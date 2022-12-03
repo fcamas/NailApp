@@ -2,23 +2,20 @@ package io.ria.nailapp.Utils;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.Canvas;
-import android.graphics.Color;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import io.ria.nailapp.Adapter.ToDoAdapter;
+import io.ria.nailapp.Adapter.NailAdapter;
 
-public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
+public class RecyclerViewHelper extends ItemTouchHelper.SimpleCallback {
 
-    private ToDoAdapter adapter;
+    private NailAdapter mAdapter;
 
-    public RecyclerViewTouchHelper(ToDoAdapter adapter) {
+    public RecyclerViewHelper(NailAdapter mAdapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
-        this.adapter = adapter;
+        this.mAdapter = mAdapter;
     }
 
     @Override
@@ -29,26 +26,24 @@ public class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position = viewHolder.getAdapterPosition();
-        if (direction == ItemTouchHelper.RIGHT){
-            AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
-            builder.setTitle("Delete Task");
-            builder.setMessage("Are You Sure ?");
+        if (direction == ItemTouchHelper.RIGHT || direction == ItemTouchHelper.LEFT){
+            AlertDialog.Builder builder = new AlertDialog.Builder(mAdapter.getContext());
+            builder.setTitle("Confirm");
+            builder.setMessage("Deleting Card");
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    adapter.deletTask(position);
+                    mAdapter.deletTask(position);
                 }
             });
             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    adapter.notifyItemChanged(position);
+                    mAdapter.notifyItemChanged(position);
                 }
             });
             AlertDialog dialog = builder.create();
             dialog.show();
-        }else{
-            adapter.editItem(position);
         }
     }
 
