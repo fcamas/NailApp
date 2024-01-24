@@ -57,8 +57,20 @@
 
 <!--   ask user for email -->
     <EditText
+        a  android:id="@+id/editTexEmail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/black"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"/>
 <!--  ask user   for phone number-->
     <EditText
         android:layout_width="match_parent"
