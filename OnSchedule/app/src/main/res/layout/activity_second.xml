@@ -94,5 +94,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
+    <RadioButton
+        android:id="@+id/radio_am"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:buttonTint="@color/black"
+        android:checked="true"
+        android:text="am" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
