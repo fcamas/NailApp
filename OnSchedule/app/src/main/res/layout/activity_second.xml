@@ -102,5 +102,13 @@
         android:checked="true"
         android:text="am" />
 
+    <RadioButton
+        android:id="@+id/radio_pm"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:buttonTint="@color/black"
+        android:checked="true"
+        android:text="pm" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
