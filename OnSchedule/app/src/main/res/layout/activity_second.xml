@@ -175,10 +175,24 @@
         android:layout_marginEnd="145dp"
         android:layout_marginRight="16dp"
         android:buttonTint="@color/black"
-        android:text="Pedicure jelly ($100.00)"
+        android:text="Fullset Pedicure($100.00)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/s_4" />
+    <CheckBox
+        android:id="@+id/s_6"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginRight="16dp"
+        android:buttonTint="@color/black"
+        android:text="Fullset manicure($100.00)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s_5" />
     <Button
         android:id="@+id/btn_finish"
         android:layout_width="match_parent"
@@ -191,7 +205,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_5" />
+        app:layout_constraintTop_toBottomOf="@+id/s_6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
