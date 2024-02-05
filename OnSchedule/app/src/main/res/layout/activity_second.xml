@@ -88,11 +88,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"/>
 <!--   ask user  for date-->
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+
 
     <RadioGroup
         android:id="@+id/radio_time"
@@ -105,7 +101,6 @@
         android:layout_marginRight="65dp"
         android:gravity="left"
         android:orientation="horizontal"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPhoneNumber">
 
@@ -134,8 +129,9 @@
             android:text="pm" />
 
     </RadioGroup>
+
     <CheckBox
-        android:id="@+id/s_0"
+        android:id="@+id/manicure_fullset"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -150,7 +146,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radio_time"/>
 
     <CheckBox
-        android:id="@+id/s_1"
+        android:id="@+id/pedicureFullset"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -162,10 +158,10 @@
         android:text="Manicure Regular $35.00)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_0"/>
+        app:layout_constraintTop_toBottomOf="@+id/manicure_fullset"/>
     />
     <CheckBox
-        android:id="@+id/s_4"
+        android:id="@+id/manicure_jelly"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -177,10 +173,10 @@
         android:text="Pedicure jelly ($100.00)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_1" />
+        app:layout_constraintTop_toBottomOf="@+id/pedicureFullset" />
 
     <CheckBox
-        android:id="@+id/s_5"
+        android:id="@+id/pedicure_jelly"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -192,9 +188,9 @@
         android:text="Fullset Pedicure($100.00)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_4" />
+        app:layout_constraintTop_toBottomOf="@+id/manicure_jelly" />
     <CheckBox
-        android:id="@+id/s_6"
+        android:id="@+id/nail_design"
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -206,7 +202,7 @@
         android:text="Fullset manicure($100.00)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_5" />
+        app:layout_constraintTop_toBottomOf="@+id/pedicure_jelly" />
     <Button
         android:id="@+id/btn_finish"
         android:layout_width="match_parent"
@@ -219,7 +215,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/s_6" />
+        app:layout_constraintTop_toBottomOf="@+id/nail_design" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
