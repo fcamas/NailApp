@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
     private lateinit var mSaveButton: Button
-    private lateinit var mS1: CheckBox
-    private lateinit var mS2: CheckBox
-    private lateinit var mS3: CheckBox
-    private lateinit var mS4: CheckBox
+    private lateinit var manicureFullSet: CheckBox
+    private lateinit var pedicureFullSet: CheckBox
+    private lateinit var manicureJelly: CheckBox
+    private lateinit var pedicureJelly: CheckBox
     private lateinit var mFullName: EditText
     private lateinit var mEmail: EditText
     private lateinit var mPhoneNumber: EditText
@@ -23,5 +23,9 @@ class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
+            manicureFullSet = findViewById(R.id.manicure_fullset)
+            pedicureFullSet = findViewById(R.id.pedicureFullset)
+            manicureJelly = findViewById(R.id.manicure_jelly)
+            pedicureJelly = findViewById(R.id.pedicure_jelly)
     }
 }
