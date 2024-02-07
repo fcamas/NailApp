@@ -27,5 +27,12 @@ class SecondActivity : AppCompatActivity() {
             pedicureFullSet = findViewById(R.id.pedicureFullset)
             manicureJelly = findViewById(R.id.manicure_jelly)
             pedicureJelly = findViewById(R.id.pedicure_jelly)
+            mSaveButton = findViewById(R.id.btn_finish)
+            mFullName = findViewById(R.id.cell_fullname)
+            mEmail = findViewById(R.id.cell_email)
+            mPhoneNumber = findViewById(R.id.editPhoneNumber)
+            mTime = findViewById(R.id.txt_time)
+            mRadioam = findViewById(R.id.radio_am)
+            mRadiopm = findViewById(R.id.radio_pm)
     }
 }
