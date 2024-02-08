@@ -35,4 +35,21 @@ class SecondActivity : AppCompatActivity() {
             mRadioam = findViewById(R.id.radio_am)
             mRadiopm = findViewById(R.id.radio_pm)
     }
+
+    private fun getService(mS1: CheckBox, mS2: CheckBox, mS3: CheckBox, mS4: CheckBox): String {
+        var result = ""
+        if (mS1.isChecked) {
+            result += "mr  "
+        }
+        if (mS2.isChecked) {
+            result += "mj  "
+        }
+        if (mS3.isChecked) {
+            result += "pr  "
+        }
+        if (mS4.isChecked) {
+            result += "pj  "
+        }
+        return result
+    }
 }
