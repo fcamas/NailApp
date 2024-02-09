@@ -52,4 +52,21 @@ class SecondActivity : AppCompatActivity() {
         }
         return result
     }
+    private fun calculatePrice(mS1: CheckBox, mS2: CheckBox, mS3: CheckBox, mS4: CheckBox): String {
+        var total = 0.0
+        if (mS1.isChecked) {
+            total += 35
+        }
+        if (mS2.isChecked) {
+            total += 75
+        }
+        if (mS3.isChecked) {
+            total += 55
+        }
+        if (mS4.isChecked) {
+            total += 100
+        }
+        val result = "$$total"
+        return result
+    }
 }
