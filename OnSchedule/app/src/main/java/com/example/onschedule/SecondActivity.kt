@@ -69,4 +69,15 @@ class SecondActivity : AppCompatActivity() {
         val result = "$$total"
         return result
     }
+
+    private fun getTime(mTime: EditText, mRadioam: RadioButton, mRadiopm: RadioButton): String {
+        var result = mTime.text.toString()
+
+        result += if (mRadioam.isChecked) {
+            " am"
+        } else {
+            " pm"
+        }
+        return result
+    }
 }
