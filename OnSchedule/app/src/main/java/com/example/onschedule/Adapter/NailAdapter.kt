@@ -12,6 +12,9 @@ class NailAdapter( private val mActivity: MainActivity){
 
     private var mList: List<NailModel> = listOf()
 
+    override fun getItemCount(): Int {
+        return mList.size
+    }
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mCheckBox: CheckBox = itemView.findViewById(R.id.cell_checkbox)
         val mFullName: TextView = itemView.findViewById(R.id.cell_fullname)
