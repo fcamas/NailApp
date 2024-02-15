@@ -1,5 +1,6 @@
 package com.example.onschedule.Adapter
 
+import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
@@ -11,6 +12,14 @@ import com.example.onschedule.R
 class NailAdapter( private val mActivity: MainActivity){
 
     private var mList: List<NailModel> = listOf()
+
+    fun editItem(position: Int) {
+        val item = mList[position]
+        val bundle = Bundle().apply {
+            putInt("id", item.id)
+            putString("task", item.task)
+        }
+    }
 
     override fun getItemCount(): Int {
         return mList.size
