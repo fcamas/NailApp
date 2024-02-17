@@ -13,6 +13,11 @@ class NailAdapter( private val mActivity: MainActivity){
 
     private var mList: List<NailModel> = listOf()
 
+    fun setTasks(mList: List<NailModel>) {
+        this.mList = mList
+
+    }
+    
     fun deletItem(position: Int) {
         val item = mList[position]
         
