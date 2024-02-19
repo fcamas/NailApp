@@ -14,6 +14,11 @@ class NailDBHelper {
         db.insert(TABLE_NAME, null, values)
     }
 
+    fun deleteTask(id: Int) {
+        db = writableDatabase
+        db.delete(TABLE_NAME, "ID=?", arrayOf(id.toString()))
+    }
+    
     fun updateStatus(id: Int, status: Int) {
         db = writableDatabase
         val values = ContentValues()
