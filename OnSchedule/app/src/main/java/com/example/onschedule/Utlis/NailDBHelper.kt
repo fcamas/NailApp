@@ -13,4 +13,11 @@ class NailDBHelper {
         values.put(COL_8, 0)
         db.insert(TABLE_NAME, null, values)
     }
+
+    fun updateStatus(id: Int, status: Int) {
+        db = writableDatabase
+        val values = ContentValues()
+        values.put(COL_8, status)
+        db.update(TABLE_NAME, values, "ID=?", arrayOf(id.toString()))
+    }
 }
